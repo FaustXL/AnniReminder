@@ -21,3 +21,7 @@ app/build/
 *.log
 .DS_Store
 Thumbs.db
+
+# Release signing (keep local, never commit)
+keystore.properties
+signing/
