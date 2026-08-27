@@ -7,6 +7,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.activity.compose.BackHandler
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.activity.viewModels
 import androidx.compose.foundation.layout.Box
@@ -78,6 +79,10 @@ class MainActivity : ComponentActivity() {
         }
 
         Box(Modifier.fillMaxSize()) {
+            // 非首页时，系统返回 = 返回首页，而不是退出应用
+            BackHandler(enabled = vm.screen != Screen.Home) {
+                vm.screen = Screen.Home
+            }
             when (val s = vm.screen) {
                 is Screen.Home -> HomeScreen(
                     vm = vm,

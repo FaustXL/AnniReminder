@@ -12,7 +12,9 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.layout.widthIn
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyListLayoutInfo
 import androidx.compose.foundation.lazy.LazyListState
@@ -131,44 +133,56 @@ private fun centeredIndex(state: LazyListState): Int? {
         ?.index
 }
 
-/** 步进器行：标签 [-] 值 单位 [+] */
+/** 步进器行：标签 [-] 数值+单位 [+]，可选下一行小字提示 */
 @Composable
 fun StepperRow(
     label: String,
     value: Int,
     unit: String,
     range: IntRange,
+    tip: String? = null,
     onChange: (Int) -> Unit
 ) {
-    Row(
-        Modifier.fillMaxWidth(),
-        verticalAlignment = Alignment.CenterVertically
-    ) {
-        Text(label, color = C.Black, fontWeight = FontWeight.Bold, fontSize = 15.sp)
-        Box(Modifier.weight(1f))
-        StepBtn(if (value <= range.first) C.Black.copy(alpha = 0.3f) else C.Black, "−") {
-            if (value > range.first) onChange(value - 1)
-        }
-        Box(
-            Modifier
-                .padding(horizontal = 14.dp)
-                .width(64.dp)
-                .clip(RoundedCornerShape(10.dp))
-                .background(C.Black),
-            contentAlignment = Alignment.Center
+    Column(Modifier.fillMaxWidth()) {
+        Row(
+            Modifier.fillMaxWidth(),
+            verticalAlignment = Alignment.CenterVertically
         ) {
+            Text(label, color = C.Black, fontWeight = FontWeight.Bold, fontSize = 15.sp)
+            Box(Modifier.weight(1f))
+            StepBtn(if (value <= range.first) C.Black.copy(alpha = 0.3f) else C.Black, "−") {
+                if (value > range.first) onChange(value - 1)
+            }
+            Box(
+                Modifier
+                    .padding(horizontal = 12.dp)
+                    .widthIn(min = 72.dp)
+                    .clip(RoundedCornerShape(10.dp))
+                    .background(C.Black),
+                contentAlignment = Alignment.Center
+            ) {
+                Text(
+                    "$value $unit",
+                    color = C.Paper,
+                    fontWeight = FontWeight.Black,
+                    fontSize = 16.sp,
+                    modifier = Modifier.padding(horizontal = 8.dp, vertical = 5.dp)
+                )
+            }
+            StepBtn(if (value >= range.last) C.Black.copy(alpha = 0.3f) else C.Black, "+") {
+                if (value < range.last) onChange(value + 1)
+            }
+        }
+        if (tip != null) {
+            Spacer(Modifier.height(4.dp))
             Text(
-                "$value",
-                color = C.Paper,
-                fontWeight = FontWeight.Black,
-                fontSize = 18.sp,
-                modifier = Modifier.padding(vertical = 4.dp)
+                tip,
+                style = Mono,
+                color = C.Black.copy(alpha = 0.55f),
+                fontSize = 11.sp,
+                modifier = Modifier.padding(start = 2.dp)
             )
         }
-        StepBtn(if (value >= range.last) C.Black.copy(alpha = 0.3f) else C.Black, "+") {
-            if (value < range.last) onChange(value + 1)
-        }
-        Text(" $unit", color = C.Black.copy(alpha = 0.7f), fontSize = 13.sp)
     }
 }
 

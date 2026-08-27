@@ -274,7 +274,13 @@ private fun EntryCard(
             onUpdate(entry.copy(repeatYears = it))
         }
         Spacer(Modifier.height(10.dp))
-        StepperRow("提前提醒", entry.advanceDays, "天（0 = 不提前）", 0..30) {
+        StepperRow(
+            "提前提醒",
+            entry.advanceDays,
+            "天",
+            0..30,
+            tip = "提前 N 天额外写入一条提醒日程，设为 0 则不写入"
+        ) {
             onUpdate(entry.copy(advanceDays = it))
         }
         Spacer(Modifier.height(14.dp))
