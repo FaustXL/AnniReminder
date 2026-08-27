@@ -209,7 +209,7 @@ private fun PersonCard(
             Spacer(Modifier.width(8.dp))
             Text(
                 "删除",
-                color = C.Black, fontWeight = FontWeight.Black, fontSize = 13.sp,
+                color = C.Paper, fontWeight = FontWeight.Black, fontSize = 13.sp,
                 modifier = Modifier
                     .clip(RoundedCornerShape(999.dp))
                     .background(C.Black)
