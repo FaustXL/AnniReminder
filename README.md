@@ -1,4 +1,4 @@
-<img width="1080" height="2340" alt="08-settings" src="https://github.com/user-attachments/assets/59a04a2d-3d99-4ae2-8510-fe7d73884d0b" /># 纪念日提醒 (AnniReminder)
+# 纪念日提醒 (AnniReminder)
 
 一个把 **生日 / 纪念日** 批量写入 **系统日历** 的安卓应用。UI 采用 Sundance Film Festival 2023 海报风格（橙 #FF4B00 / 黑 / 灰 / 大圆角卡片 / 等宽字体排版）。
 
