@@ -2,10 +2,7 @@
 
 一个把 **生日 / 纪念日** 批量写入 **系统日历** 的安卓应用。UI 采用 Sundance Film Festival 2023 海报风格（橙 #FF4B00 / 黑 / 灰 / 大圆角卡片 / 等宽字体排版）。
 
-<img width="270" height="585" alt="11-release-on-emulator" src="https://github.com/user-attachments/assets/088aaf55-8aee-4d0a-ae2b-23ddb61781c6" />
-<img width="270" height="585" alt="09-delete-button-fixed" src="https://github.com/user-attachments/assets/19990839-57e5-4823-8eb3-1643c7839f61" />
-<img width="270" height="585" alt="10-stepper-tip" src="https://github.com/user-attachments/assets/7472fa48-e5d2-436e-bbaa-518e980d91ea" />
-<img width="270" height="585" alt="08-settings" src="https://github.com/user-attachments/assets/b9f65656-edfe-476b-9207-80a3ac10c089" />
+<img width="270" height="585" alt="11-release-on-emulator" src="https://github.com/user-attachments/assets/088aaf55-8aee-4d0a-ae2b-23ddb61781c6" /><img width="270" height="585" alt="09-delete-button-fixed" src="https://github.com/user-attachments/assets/19990839-57e5-4823-8eb3-1643c7839f61" /><img width="270" height="585" alt="10-stepper-tip" src="https://github.com/user-attachments/assets/7472fa48-e5d2-436e-bbaa-518e980d91ea" /><img width="270" height="585" alt="08-settings" src="https://github.com/user-attachments/assets/b9f65656-edfe-476b-9207-80a3ac10c089" />
 
 ## 功能
 
